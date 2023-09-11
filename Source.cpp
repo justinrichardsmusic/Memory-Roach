@@ -111,19 +111,19 @@ public:
 				game.DrawInstructions(this);
 			}
 
-			if (nMenuID == 3) // New Game
+			if (nMenuID == cMenu::MENU_ID::NEW_GAME)
 			{
 				const olc::vf2d vfCenterOfMap = { 360.0f, 360.0f };
 				game.PointOfFocus(vfCenterOfMap);
 			}
 
-			if (nMenuID == 6) // Start
+			if (nMenuID == cMenu::MENU_ID::START)
 			{
 				game.nSystemMem = 8;
 				nNextGameState = RESET;
 			}
 
-			if (nMenuID == 4) // Audio
+			if (nMenuID == cMenu::MENU_ID::SOUND)
 			{
 				AL.bSoundOn = !AL.bSoundOn;
 				AL.bMusicOn = !AL.bMusicOn;
@@ -304,7 +304,7 @@ public:
 							AS[MEM_FREED].Play();
 
 					}
-					if (nSelectedTileType == 2)
+					if (nSelectedTileType == cUnit::SOCKET_1K)
 					{
 						uSelectedUnit->Interact();
 						game.units.emplace_back(cUnit(tilePos, vfRandomAxis, 0, 1.2f, rm.RM_Sprite("./assets/img/eprom.png")));
@@ -314,7 +314,7 @@ public:
 							AS[NEW_UNIT].Play(1.0f, 0.5f);
 
 					}
-					else if (nSelectedTileType == 3)
+					else if (nSelectedTileType == cUnit::SOCKET_2K)
 					{
 						uSelectedUnit->Interact();
 						game.units.emplace_back(cUnit(tilePos, vfRandomAxis, 1, 2.0f, rm.RM_Sprite("./assets/img/eprom.png")));
@@ -361,7 +361,7 @@ public:
 				}
 				else if (uSelectedUnit != nullptr)
 				{
-					if (uSelectedUnit->nType >= 2 && !uSelectedUnit->bUsed)
+					if (uSelectedUnit->nType >= cUnit::SOCKET_1K && !uSelectedUnit->bUsed)
 					{
 						const bool bDeconstructUnit = true;
 						uSelectedUnit->Interact(bDeconstructUnit);
@@ -622,7 +622,6 @@ public:
 		LateUpdateGAME2D();
 
 		return true;
-
 	}
 };
 
