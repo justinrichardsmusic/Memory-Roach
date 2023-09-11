@@ -621,7 +621,6 @@ public:
 	}
 };
 
-using namespace GAME2D;
 int main()
 {
 	CodeJam2023 jam;
