@@ -210,8 +210,7 @@ public:
 			// Input
 			if (GetKey(olc::D).bPressed)
 			{
-				const bool bToggleDebugMode = true;
-				game.DebugOn(bToggleDebugMode);
+				game.SetDebugMode(!game.bDebugOn);
 			}
 
 			// Mouse Control
@@ -552,7 +551,7 @@ public:
 			}
 
 			// Debug
-			if (game.DebugOn())
+			if (game.bDebugOn)
 			{
 				// Add debug content here
 				//
