@@ -215,8 +215,7 @@ public:
 			}
 
 			// Mouse Control
-			const olc::vi2d viMousePos = GetMousePos();
-			game.ProcessScreenScroll(viMousePos, fElapsedTime);
+			game.ProcessScreenScroll(GetMousePos(), fElapsedTime);
 
 			if (hud.bCrashOccured || hud.bGameWon)
 				game.PointOfFocus(game.vfCenterOfMap);
