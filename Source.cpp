@@ -32,9 +32,6 @@ public:
 		PGE_GAME_2D_BACKEND::StartGAME2D		(ScreenWidth(), ScreenHeight(), SPLASH_SCREEN_ON, "./assets/snd/default.wav");
 		splashScreen.SetOptions					(2, 1, 3.0f, 0.5f, olc::BLACK, olc::Pixel{ 255, 191, 0 }, olc::DARK_GREY, olc::GREY, PGE_GAME_2D_ENABLED);
 
-		// Add extra transitions
-		olcPGEX_Transition::AddTransitionType	(transitions, DARK_BROWN, rm.RM_Sprite("./assets/img/white.png"), olc::Pixel(52, 32, 43));
-
 		// Scrolling Tile
 		PGE_GAME_2D_BACKEND::SetScrollingTile	({ 512, 512 }, rm.RM_Sprite("./assets/img/circuit.png"));
 
